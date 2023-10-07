@@ -20,85 +20,60 @@
 //}
 
 // operator = RAM[0]
-// @R0
-// D = M
+@R0
+D = M
 
-// @operator
-// M = D
+@operator
+M = D
 
-// // operand = RAM[1]
-// @R1
-// D = M
+// operand = RAM[1]
+@R1
+D = M
 
-// @operand
-// M = D
+@operand
+M = D
 
-// //clear R2
-// @R2
-// M = 0
+//clear R2
+@R2
+M = 0
 
-// // Product = RAM[3]
-// @sum
-// M = 0
-
-// (LOOP)
-
-//     // d = operator
-//     @operator
-//     D = M
-
-//     // sum = sum + operator
-//     @sum
-//     M = M + D
-
-//     //decrement operand for eventual 0
-//     @operand
-//     M = M - 1
-//     D = M
-
-//     // if operand != 0 goto LOOP
-//     @LOOP
-//     D;JGT
-
-//     // otherwise goto STOP
-//     @STOP
-//     0;JMP 
-
-
-// // set RAM[2] = sum
-// (STOP)
-
-//     @sum
-//     D = M
-//     @R2
-//     M=D
-
-
-// (END)
-//     @END
-//     0;JMP
-
-(INIT)
-
-  @R2
-  M = 0   // we want to clear the result reg for answer`
+// Product = RAM[3]
+@sum
+M = 0
 
 (LOOP)
 
-  @R0
-  D = M   // D hold the value of R0
+    // d = operator
+    @operator
+    D = M
 
-  @R2
-  M = M + D // add R3 to sum
+    // sum = sum + operator
+    @sum
+    M = M + D
 
-  @R1
-  M = M - 1 // decrement R2 for eventual 0
-  D = M
+    //decrement operand for eventual 0
+    @operand
+    M = M - 1
+    D = M
 
-  @LOOP
-  D;JGT // exit loop if R1 == 0, otherwise goto (LOOP)
+    // if operand != 0 goto LOOP
+    @LOOP
+    D;JGT
 
-(INFINITE_LOOP)
+    // otherwise goto STOP
+    @STOP
+    0;JMP 
 
-  @INFINITE_LOOP
-  0;JMP
+
+// set RAM[2] = sum
+(STOP)
+
+    @sum
+    D = M
+    @R2
+    M=D
+
+
+(END)
+    @END
+    0;JMP
