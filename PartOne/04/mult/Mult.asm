@@ -20,67 +20,85 @@
 //}
 
 // operator = RAM[0]
-@R0
-D = M
+// @R0
+// D = M
 
-@operator
-M = D
+// @operator
+// M = D
 
-// operand = RAM[1]
-@R1
-D = M
+// // operand = RAM[1]
+// @R1
+// D = M
 
-@operand
-M = D
+// @operand
+// M = D
 
-// Product = RAM[3]
-@sum
-M = 0
+// //clear R2
+// @R2
+// M = 0
 
-// i = 0
-@i
-M = 1
+// // Product = RAM[3]
+// @sum
+// M = 0
 
-// For i in range of operator:
-//      Product = Product + operand
+// (LOOP)
+
+//     // d = operator
+//     @operator
+//     D = M
+
+//     // sum = sum + operator
+//     @sum
+//     M = M + D
+
+//     //decrement operand for eventual 0
+//     @operand
+//     M = M - 1
+//     D = M
+
+//     // if operand != 0 goto LOOP
+//     @LOOP
+//     D;JGT
+
+//     // otherwise goto STOP
+//     @STOP
+//     0;JMP 
+
+
+// // set RAM[2] = sum
+// (STOP)
+
+//     @sum
+//     D = M
+//     @R2
+//     M=D
+
+
+// (END)
+//     @END
+//     0;JMP
+
+(INIT)
+
+  @R2
+  M = 0   // we want to clear the result reg for answer`
+
 (LOOP)
 
-    // get value of i
-    @i
-    D = M
+  @R0
+  D = M   // D hold the value of R0
 
-    // if i >= operator goto STOP
-    @operator
-    D = D - M
-    @STOP
-    D;JGT
+  @R2
+  M = M + D // add R3 to sum
 
-    // sum = sum + operand
-    @sum
-    D = M
+  @R1
+  M = M - 1 // decrement R2 for eventual 0
+  D = M
 
-    @operand
-    D = D + M
+  @LOOP
+  D;JGT // exit loop if R1 == 0, otherwise goto (LOOP)
 
-    @sum
-    M = D
+(INFINITE_LOOP)
 
-    // i = i + 1
-    @i
-    M = M + 1
-    @LOOP
-    0;JMP 
-
-
-// set RAM[2] = sum
-(STOP)
-
-    @sum
-    D = M
-    @R2
-    M=D
-
-
-(END)
-    @END
-    0;JMP
+  @INFINITE_LOOP
+  0;JMP
