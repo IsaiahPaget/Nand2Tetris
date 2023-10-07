@@ -51,7 +51,7 @@ M = 0
     @sum
     M = M + D
 
-    //decrement operand for eventual 0
+    // decrement operand for eventual 0
     @operand
     M = M - 1
     D = M
@@ -59,6 +59,10 @@ M = 0
     // if operand != 0 goto LOOP
     @LOOP
     D;JGT
+
+    // if operand = 0 goto ZERO
+    @ZERO
+    D;JLT
 
     // otherwise goto STOP
     @STOP
@@ -72,6 +76,16 @@ M = 0
     D = M
     @R2
     M=D
+
+    @END
+    0;JMP
+
+// case where operand is zero
+(ZERO)
+    @sum
+    M = 0
+    @STOP
+    0;JMP
 
 
 (END)
