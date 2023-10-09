@@ -1,6 +1,6 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
+// by notInstruction15san and Schocken, MIT Press.
 // File name: projects/05/CPU.hdl
 
 /**
@@ -39,5 +39,31 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-    // Put your code here:
+
+        // Select instruction or ALU output
+        Not(in=instruction[15],out=notInstruction15);
+        Mux16(a=outtM,b=instruction,sel=notInstruction15,out=muxOneOut);
+
+        // Load the A register
+        Or(a=notInstruction15,b=instruction[5],out=loadARegister);
+        ARegister(in=muxOneOut,load=loadARegister,out=aRegisterOut,out[0..14]=addressM);
+
+        // Select whether to run a calculation with A or M
+        And(a=instruction[15],b=instruction[12],out=AorM);
+        Mux16(a=aRegisterOut,b=inM,sel=AorM,out=AM);
+        
+        // Do the calculation
+        ALU(x=dRegisterOut,y=AM,zx=instruction[11],nx=instruction[10],zy=instruction[9],ny=instruction[8],f=instruction[7],no=instruction[6],out=outtM,out=outM,zr=zr,ng=ng);
+
+        // Load the D register
+        And(a=instruction[15],b=instruction[4],out=loadDRegister);
+        DRegister(in=outtM,load=loadDRegister,out=dRegisterOut);
+
+        // Write memory out
+        And(a=instruction[15],b=instruction[3],out=writeM);
+
+        // Dealing with the j bits
+        JumpCondition(instruction=instruction, zr=zr, ng=ng, out=ld);
+
+        PC(in=aRegisterOut,load=ld,inc=true,reset=reset,out[0..14]=pc);
 }
