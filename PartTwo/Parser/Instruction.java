@@ -1,0 +1,6 @@
+/**
+ * Instruction
+ */
+public class Instruction {
+	
+}

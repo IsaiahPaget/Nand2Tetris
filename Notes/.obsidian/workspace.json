@@ -16,6 +16,42 @@
             }
           },
           {
+            "id": "8f931ed2adf594e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "VM Translator.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "862367ec8c28d6f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "VM Implementation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c88c6315701aca50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "VM Abstraction.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "24ddebae15ebb184",
             "type": "leaf",
             "state": {
@@ -40,7 +76,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -106,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Low Level Programming.md",
+                "file": "VM Abstraction.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Low Level Programming.md",
+                "file": "VM Abstraction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Low Level Programming.md"
+                "file": "VM Abstraction.md"
               }
             }
           }
@@ -167,9 +203,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f8a7d24130ad47f8",
+  "active": "c88c6315701aca50",
   "lastOpenFiles": [
-    "The Hack Computer and Machine Language.md",
-    "Low Level Programming.md"
+    "VM Implementation.md",
+    "VM Translator.md",
+    "VM Abstraction.md",
+    "Pasted image 20231111114150.png",
+    "Low Level Programming.md",
+    "Pasted image 20231105091839.png",
+    "The Hack Computer and Machine Language.md"
   ]
 }
