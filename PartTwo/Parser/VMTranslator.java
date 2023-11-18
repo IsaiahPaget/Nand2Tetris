@@ -11,5 +11,7 @@ class VMTranslator {
 		reader.openFile(args[0]);
 		ArrayList lines = reader.readFile();	
 		System.out.println(lines);
+		Parser parser = new Parser(lines);
+		parser.parse();
 	}
 }
