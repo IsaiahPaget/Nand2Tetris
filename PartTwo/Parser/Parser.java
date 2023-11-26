@@ -21,10 +21,7 @@ public class Parser {
 			// System.out.print(_command);
 			// System.out.print(_segment);
 			// System.out.println(_index);
-			Line codeLine = new Line();
-			codeLine.command = _command;
-			codeLine.segment = _segment;
-			codeLine.index = _index;
+			Line codeLine = new Line(this._command, this._segment, this._index);
 			code.addLast(codeLine);
 		}
 	}
@@ -57,5 +54,9 @@ public class Parser {
 		if ( !(startIndex <= 0) ) {
 			_index = line.substring(startIndex + 1, line.length());
 		}
+	}
+
+	ArrayList<Line> getCode() {
+		return this.code;
 	}
 }

@@ -1,6 +1,0 @@
-/**
- * Instruction
- */
-public class Instruction {
-	
-}

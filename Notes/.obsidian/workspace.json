@@ -45,7 +45,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "VM Abstraction.md",
+                "file": "The Hack Computer and Machine Language.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1cea262c87127ec3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pop cmd in ASM.md",
                 "mode": "source",
                 "source": false
               }
@@ -76,7 +88,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -142,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "VM Abstraction.md",
+                "file": "Pop cmd in ASM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "VM Abstraction.md",
+                "file": "Pop cmd in ASM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +194,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "VM Abstraction.md"
+                "file": "Pop cmd in ASM.md"
               }
             }
           }
@@ -203,14 +215,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c88c6315701aca50",
+  "active": "1cea262c87127ec3",
   "lastOpenFiles": [
-    "VM Implementation.md",
+    "The Hack Computer and Machine Language.md",
+    "Pop cmd in ASM.md",
     "VM Translator.md",
+    "VM Implementation.md",
     "VM Abstraction.md",
     "Pasted image 20231111114150.png",
     "Low Level Programming.md",
-    "Pasted image 20231105091839.png",
-    "The Hack Computer and Machine Language.md"
+    "Pasted image 20231105091839.png"
   ]
 }
