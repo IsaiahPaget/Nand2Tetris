@@ -8,8 +8,8 @@ class VMTranslator {
 			System.exit(-1);
 		} 
 
-		IO reader = new IO();
-		reader.openFile(args[0]);
+		IO reader = new IO(args[0]);
+		reader.openFile();
 		ArrayList lines = reader.readFile();	
 		System.out.println(lines);
 
@@ -18,6 +18,7 @@ class VMTranslator {
 		ArrayList<Line> code = parser.getCode();
 
 		InstructionGenerator generator = new InstructionGenerator(code);
-		generator.generateCode();
+		String generatedASM = generator.generateCode();
+		reader.writeFile(generatedASM);
 	}
 }

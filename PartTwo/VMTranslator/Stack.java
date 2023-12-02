@@ -15,10 +15,22 @@ public class Stack {
 		incrementStackPointer();
 	}
 
-	void pop() {
-		stack.remove(stackPointer - 1);
+	String pop() {
+		String value = stack.remove(stackPointer - 1);
 		decrementStackPointer();
+		return value;
 	} 
+
+	void add() {
+		String value1 = pop();
+		String value2 = pop();
+
+		int num1 = Integer.parseInt(value1);
+		int num2 = Integer.parseInt(value2);
+
+		int sum = num1 + num2;
+		push(String.valueOf(sum));
+	}
 
 	private void incrementStackPointer() {
 		stackPointer++;
